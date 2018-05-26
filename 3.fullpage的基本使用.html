@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery.fullpage.css">
+</head>
+<body>
+
+
+<!--2. 基本结构-->
+<div class="fullpage">
+    <div class="section">第1屏</div>
+    <div class="section">第2屏</div>
+    <div class="section">第3屏</div>
+    <div class="section">第4屏</div>
+    <div class="section">第5屏</div>
+</div>
+
+
+<!--1. 引入文件-->
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery.fullpage.js"></script>
+<script>
+
+  //3. 初始化fullpage
+    $(".fullpage").fullpage({
+        //配置参数
+        sectionsColor:["yellow", "green", "pink", "purple", "skyblue"],
+        //设置内容不垂直居中
+        verticalCentered:false,
+        //显示小圆点
+        navigation:true
+    });
+
+</script>
+
+</body>
+</html>

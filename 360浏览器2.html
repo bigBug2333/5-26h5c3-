@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery.fullpage.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .section {
+        overflow: hidden;
+    }
+
+    /* 第一屏 */
+
+    .one .logo {
+        width: 251px;
+        height: 186px;
+        background-image: url(images/1_logo.png);
+        margin: 80px auto;
+    }
+    .one .text {
+        text-align: center;
+    }
+
+    .one .text img {
+        margin: 0px 30px;
+        opacity: .2;
+    }
+
+    .one.now .text img {
+        margin: 0;
+        opacity: 1;
+        transition: all 1s;
+    }
+
+    .one .info {
+        width: 772px;
+        height: 49px;
+        margin: 30px auto;
+        background-image: url(images/1_info.png);
+    }
+
+    /* 第二屏 */
+    .two {
+        padding: 0 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .two .shield {
+        width: 450px;
+        min-width: 450px;
+    }
+    
+    .two .shield img {
+        float: left;
+    }
+
+        /*第一个状态*/
+    .two img:nth-child(1) {
+        transform: translate(35px, 78px) rotate(45deg);
+    }
+
+    .two img:nth-child(2) {
+        transform: translate(135px, 282px) rotate(15deg);
+    }
+
+    .two img:nth-child(3) {
+        transform: translate(187px, 62px) rotate(15deg);
+    }
+
+    .two img:nth-child(4) {
+        transform: translate(10px, 162px) rotate(30deg);
+    }
+
+    .two img:nth-child(5) {
+        transform: translate(465px, 522px) rotate(30deg);
+    }
+
+    .two img:nth-child(6) {
+        transform: translate(480px, 62px) rotate(90deg);
+    }
+
+    .two img:nth-child(7) {
+        transform: translate(180px, -305px) rotate(80deg);
+    }
+
+    .two img:nth-child(8) {
+        transform: translate(300px, -22px) rotate(70deg);
+    }
+
+    .two img:nth-child(9) {
+        transform: translate(280px, -322px) rotate(60deg);
+    }
+
+    /*第二个状态*/
+    .two.now img {
+        /*0不用带单位*/
+        transform: translate(0, 0) rotate(0deg);
+        transition: all 1s;
+    }
+
+    .two .info {
+        width: 635px;
+        height: 309px;
+        background-image: url(images/2_info_2.png);
+    }
+
+    /* 第三屏 */
+    .three {
+        padding: 0 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .three .info {
+        width: 631px;
+        height: 278px;
+        background-image: url(images/3_info_3.png);
+    }
+    .three .circle {
+        width: 453px;
+        height: 449px;
+        background-image: url(images/3_circle.png);
+        position: relative;
+    }
+    .three .rocket {
+        width: 203px;
+        height: 204px;
+        background-image: url(images/3_rocket.png);
+        position: absolute;
+        top: 120px;
+        left: 100px;
+        transform: translate(-1500px, 500px);
+    }
+    .three.now .rocket {
+        transform: translate(0);
+        transition: all 1s;
+    }
+
+
+    /* 第四屏 */
+    .four {
+        display: flex;
+        padding: 0 80px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .four .movie {
+        width: 529px;
+        height: 450px;
+        /*background-color: pink;*/
+        position: relative;
+    }
+    /* 第一个状态 */
+    .four .search {
+        width: 529px;
+        height: 66px;
+        background-image: url(images/4_search.png);
+        transform: translateX(-1000px);
+    }
+    .four .key {
+        width: 99px;
+        height: 22px;
+        background-image: url(images/4_key.png);
+        position: absolute;
+        left: 23px;
+        top: 23px;
+        width: 0;
+    }
+    .four .result {
+        width: 529px;
+        height: 372px;
+        background-image: url(images/4_result.png);
+        height: 0;
+    }
+    .four .info {
+        width: 612px;
+        height: 299px;
+        background-image: url(images/4_info_4.png);
+    }
+    /* 第二种状态 */
+    .four.now .search {
+        transform: translateX(0);
+        transition: all 1s;
+    }
+    .four.now .key {
+        width: 99px;
+        transition: all 2s 1s steps(5, start);
+    }
+    .four.now .result {
+        height: 372px;
+        transition: all 1s 3s ;
+    }
+
+
+    /* 第五屏 */
+
+    </style>
+</head>
+<body>
+
+
+<!--2. 基本结构-->
+<div class="fullpage">
+    <!-- 第一屏 -->
+    <div class="section one">
+        <div class="logo"></div>
+        <div class="text">
+            <img src="images/1_text_1.png" alt="">
+            <img src="images/1_text_2.png" alt="">
+            <img src="images/1_text_3.png" alt="">
+            <img src="images/1_text_4.png" alt="">
+            <img src="images/1_text_5.png" alt="">
+            <img src="images/1_text_6.png" alt="">
+            <img src="images/1_text_7.png" alt="">
+            <img src="images/1_text_8.png" alt="">
+        </div>
+        <div class="info"></div>
+    </div>
+    <!-- 第二屏 -->
+    <div class="section two">
+        <div class="shield">
+            <img src="images/2_shield_1.png" alt="">
+            <img src="images/2_shield_2.png" alt="">
+            <img src="images/2_shield_3.png" alt="">
+            <img src="images/2_shield_4.png" alt="">
+            <img src="images/2_shield_5.png" alt="">
+            <img src="images/2_shield_6.png" alt="">
+            <img src="images/2_shield_7.png" alt="">
+            <img src="images/2_shield_8.png" alt="">
+            <img src="images/2_shield_9.png" alt="">
+        </div>
+        <div class="info"></div>              
+    </div>
+    <!-- 第三屏 -->
+    <div class="section three">
+        <div class="info"></div>
+        <div class="circle">
+            <div class="rocket"></div>
+        </div>
+    </div>
+    <!-- 第四屏 -->
+    <div class="section four">
+        <div class="movie">
+            <div class="search"></div>
+            <div class="key"></div>
+            <div class="result"></div>
+        </div>
+        <div class="info"></div>           
+    </div>
+    <!-- 第五屏 -->
+    <div class="section five">
+        <div class="info"></div>
+        <div class="browser">
+            <!--四条线-->
+            <div class="line_top"></div>
+            <div class="line_right"></div>
+            <div class="line_bottom"></div>
+            <div class="line_left"></div>
+
+            <div class="toolbar">
+                <div class="line_box"></div>
+            </div>
+            <div class="extra"></div>
+            <div class="line_center"></div> 
+        </div>
+    </div>
+</div>
+
+
+<!--1. 引入文件-->
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery.fullpage.js"></script>
+<script>
+
+  $(".fullpage").fullpage({
+    sectionsColor: ['#0DA5D6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+    verticalCentered:false,
+    navigation:true,
+    afterLoad: function (anchorLink, index) {
+        // $(window).width();
+        //找到对应的section,添加now这个类即可
+        $('.section').eq(index - 1).addClass("now").siblings().removeClass("now");
+    }
+  });
+
+</script>
+
+</body>
+</html>
